@@ -1,0 +1,48 @@
+'c'i
+nll quicksort	krz f2 f5 + 4@   ; rr
+				krz f1 f5 + 8@   ; ll
+				krz f0 f5 + 12@  ; a
+				fi f1 f2 xolo
+				malkrz xx lus
+				krz f3 f0 + f1@ ; pivot
+				ata f1 1
+nll loop
+nll a			fi f0 + f1@ f3 xolo
+				malkrz xx c
+				fi f1 f2 xolo
+				malkrz xx c
+				ata f1 1
+				malkrz xx a
+nll b			fi f0 + f2@ f3 xtlo
+				malkrz xx c
+				nta f2 1
+				malkrz xx b
+nll c			fi f1 f2 xolo
+				malkrz xx d
+				inj f0 + f1@ f0 + f2@ f0 + f1@
+				malkrz xx loop
+nll d			fi f1 f2 llo
+				malkrz xx e
+				nta f5 4
+				krz f5@ f5 + 8@
+				inj f0 + f2@ f0 + f5@ f0 + f2@
+				ata f5 4
+nll e			krz f1 f5 + 8@
+				krz f3 f5 + 4@
+				nta f5 4
+				nta f2 1
+				krz f5@ f2
+				nta f5 4
+				krz f5@ f1
+				nta f5 4
+				krz f5@ f0
+				inj f5@ xx quicksort
+				nta f5 4
+				krz f5@ f3
+				nta f5 4
+				ata f2 2
+				krz f5@ f2
+				nta f5 4
+				krz f5@ f0
+				inj f5@ xx quicksort
+nll lus			krz xx f5@
