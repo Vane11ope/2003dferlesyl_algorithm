@@ -1,7 +1,5 @@
 'c'i
-
-nll main
-				krz f1 2782070968
+nll main		krz f1 2782070968
 				krz f1@ 4
 				ata f1 4
 				krz f1@ 53
@@ -17,11 +15,17 @@ nll main
 				krz f1@ 2
 				ata f1 4
 				krz f1@ 3
-				krz f5 + 4@ 7
-				krz f5 + 8@ 0
-				krz f5 + 12@ f1
-				malkrz xx quicksort
-
+				nta f5 4
+				krz f5@ 7
+				nta f5 4
+				krz f5@ 0
+				nta f5 4
+				krz f5@ f1
+				nta f5 4
+				inj f5@ xx quicksort
+				ata f5 16
+				krz xx f5@
+'c'i
 nll quicksort	krz f2 f5 + 4@   ; rr
 				krz f1 f5 + 8@   ; ll
 				krz f0 f5 + 12@  ; a
@@ -59,7 +63,9 @@ nll e			krz f1 f5 + 8@
 				krz f5@ f1
 				nta f5 4
 				krz f5@ f0
+				nta f5 4
 				inj f5@ xx quicksort
+				ata f5 16
 				nta f5 4
 				krz f5@ f3
 				nta f5 4
@@ -67,5 +73,7 @@ nll e			krz f1 f5 + 8@
 				krz f5@ f2
 				nta f5 4
 				krz f5@ f0
+				nta f5 4
 				inj f5@ xx quicksort
+				ata f5 16
 nll lus			krz xx f5@
