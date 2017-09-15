@@ -1,79 +1,77 @@
 'c'i
-nll main		krz f1 2782070968
-				krz f1@ 4
-				ata f1 4
-				krz f1@ 53
-				ata f1 4
-				krz f1@ 55
-				ata f1 4
-				krz f1@ 24
-				ata f1 4
-				krz f1@ 432
-				ata f1 4
-				krz f1@ 7
-				ata f1 4
-				krz f1@ 2
-				ata f1 4
-				krz f1@ 3
-				nta f5 4
-				krz f5@ 7
-				nta f5 4
-				krz f5@ 0
-				nta f5 4
-				krz f5@ f1
-				nta f5 4
-				inj f5@ xx quicksort
-				ata f5 16
-				krz xx f5@
+krz f1 2782070968
+krz f1@ 4    ata f1 4
+krz f1@ 53   ata f1 4
+krz f1@ 55   ata f1 4
+krz f1@ 24   ata f1 4
+krz f1@ 432  ata f1 4
+krz f1@ 7    ata f1 4
+krz f1@ 2    ata f1 4
+krz f1@ 3    ata f1 4
+
+nta f5 4 krz f5@ 7
+nta f5 4 krz f5@ 0
+nta f5 4 krz f5@ 2782070968
+nta f5 4 inj f5@ xx quicksort ata f5 16
+krz xx f5@
+
 'c'i
-nll quicksort	krz f2 f5 + 4@   ; rr
-				krz f1 f5 + 8@   ; ll
-				krz f0 f5 + 12@  ; a
-				fi f1 f2 xolo
-				malkrz xx lus
-				krz f3 f0 + f1@ ; pivot
-				ata f1 4
+nll quicksort
+krz f2 f5 + 4@
+krz f1 f5 + 8@
+krz f0 f5 + 12@
+fi f1 f2 xolo malkrz xx lus
+krz f3 f0 + f1@
+ata f1 4
+
 nll loop
-nll a			fi f0 + f1@ f3 xolo
-				malkrz xx c
-				fi f1 f2 xolo
-				malkrz xx c
-				ata f1 4
-				malkrz xx a
-nll b			fi f0 + f2@ f3 xtlo
-				malkrz xx c
-				nta f2 4
-				malkrz xx b
-nll c			fi f1 f2 xolo
-				malkrz xx d
-				inj f0 + f1@ f0 + f2@ f0 + f1@
-				malkrz xx loop
-nll d			fi f1 f2 llo
-				malkrz xx e
-				nta f5 4
-				krz f5@ f5 + 8@
-				inj f0 + f2@ f0 + f5@ f0 + f2@
-				ata f5 4
-nll e			krz f1 f5 + 8@
-				krz f3 f5 + 4@
-				nta f5 4
-				nta f2 4
-				krz f5@ f2
-				nta f5 4
-				krz f5@ f1
-				nta f5 4
-				krz f5@ f0
-				nta f5 4
-				inj f5@ xx quicksort
-				ata f5 16
-				nta f5 4
-				krz f5@ f3
-				nta f5 4
-				ata f2 8
-				krz f5@ f2
-				nta f5 4
-				krz f5@ f0
-				nta f5 4
-				inj f5@ xx quicksort
-				ata f5 16
-nll lus			krz xx f5@
+
+nll a
+fi f0 + f1@ f3 xolo malkrz xx c
+fi f1 f2 xolo malkrz xx c
+ata f1 4
+malkrz xx a
+
+nll b
+fi f0 + f2@ f3 xtlo malkrz xx c
+nta f2 4
+malkrz xx b
+
+nll c
+fi f1 f2 xolo malkrz xx d
+inj f0 + f1@ f0 + f2@ f0 + f1@
+malkrz xx loop
+
+nll d
+fi f1 f2 llo malkrz xx e
+nta f5 4
+krz f5@ f5 + 8@
+inj f0 + f2@ f0 + f5@ f0 + f2@
+ata f5 4
+
+nll e
+krz f1 f5 + 8@
+krz f3 f5 + 4@
+nta f5 4
+nta f2 4
+krz f5@ f2
+nta f5 4
+krz f5@ f1
+nta f5 4
+krz f5@ f0
+nta f5 4
+inj f5@ xx quicksort
+ata f5 16
+nta f5 4
+krz f5@ f3
+nta f5 4
+ata f2 8
+krz f5@ f2
+nta f5 4
+krz f5@ f0
+nta f5 4
+inj f5@ xx quicksort
+ata f5 16
+
+nll lus
+krz xx f5@
