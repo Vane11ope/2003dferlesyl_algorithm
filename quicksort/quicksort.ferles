@@ -56,12 +56,42 @@ inj f2@ f3@ f2@
 nta f2 f0 dto f2 2
 
 nll e
-krz f3 f5 + 8@ ; l
+krz f0 f5 + 12@  ; a
+krz f1 f5 + 8@   ; l
+krz f3 f5 + 4@   ; r
+nta f5 4 krz f5@ f0 ; a
+nta f5 4 krz f5@ f1 ; l
+nta f5 4 krz f5@ f3 ; r
+nta f5 4 krz f5@ f2 ; rr
+
+krz f0 f5 + 12@ ; a
+krz f1 f5 + 8@ ; l
+krz f2 f5@ ; rr
+nta f2 1 ; rr - 1
+
 nta f5 4 krz f5@ f0
-nta f5 4 krz f5@ f3
-nta f2 1
+nta f5 4 krz f5@ f1
 nta f5 4 krz f5@ f2
 nta f5 4 inj f5@ xx quicksort ata f5 16
+
+krz f0 f5 + 12@ ; a
+krz f1 f5@ ; rr
+ata f1 1 ; rr + 1
+krz f2 f5 + 4@ ; r
+
+nta f5 4 krz f5@ f0
+nta f5 4 krz f5@ f1
+nta f5 4 krz f5@ f2
+nta f5 4 inj f5@ xx quicksort ata f5 16
+
+ata f5 16
+
+;krz f3 f5 + 8@ ; l
+;nta f5 4 krz f5@ f0
+;nta f5 4 krz f5@ f3
+;nta f2 1
+;nta f5 4 krz f5@ f2
+;nta f5 4 inj f5@ xx quicksort ata f5 16
 ;krz f3 f5 + 4@ ; r
 ;nta f5 4 krz f5@ f0
 ;ata f2 2
