@@ -86,18 +86,5 @@ nta f5 4 inj f5@ xx quicksort ata f5 16
 
 ata f5 16
 
-;krz f3 f5 + 8@ ; l
-;nta f5 4 krz f5@ f0
-;nta f5 4 krz f5@ f3
-;nta f2 1
-;nta f5 4 krz f5@ f2
-;nta f5 4 inj f5@ xx quicksort ata f5 16
-;krz f3 f5 + 4@ ; r
-;nta f5 4 krz f5@ f0
-;ata f2 2
-;nta f5 4 krz f5@ f2
-;nta f5 4 krz f5@ f3
-;nta f5 4 inj f5@ xx quicksort ata f5 16
-
 nll lus
 krz xx f5@
