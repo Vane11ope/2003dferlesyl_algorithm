@@ -33,7 +33,6 @@ int BMsearch(unsigned char *text, unsigned char *pattern)
     return -1;
 }
 
-
 int length(unsigned char *text)
 {
     int len = 0;

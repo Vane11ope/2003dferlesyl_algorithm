@@ -1,0 +1,40 @@
+;;;;;;;;main;;;;;;;;
+'c'i
+krz f1 2782070968
+
+krz f1@ 1            ata f1 4
+krz f1@ 4            ata f1 4
+krz f1@ 2            ata f1 4
+krz f1@ 4            ata f1 4
+krz f1@ 3            ata f1 4
+krz f1@ 5            ata f1 4
+krz f1@ 9            ata f1 4
+krz f1@ 3            ata f1 4
+krz f1@ 4294967295   ata f1 4
+
+;krz f1@ 3    ata f1 4
+;krz f1@ 5    ata f1 4
+;krz f1@ 9    ata f1 4
+;krz f1@ 4294967295   ata f1 4
+
+nta f5 4 krz f5@ 2782070968
+nta f5 4 inj f5@ xx length ata f5 8
+krz xx f5@
+;;;;;;;;main;;;;;;;;
+
+;;;;;;;;length;;;;;;;;
+'c'i
+nll length
+krz f0 f5+4@
+krz f1 0
+
+nll loop
+fi f0@ 4294967295 clo malkrz xx lus
+ata f0 4
+ata f1 1
+krz xx loop
+
+nll lus
+krz f0 f1
+krz xx f5@
+;;;;;;;;length;;;;;;;;
