@@ -7,8 +7,8 @@ int main(void);
 
 int main(void)
 {
-    unsigned char text[] = "112235553";
-    unsigned char pattern[] = "5553";
+    unsigned char text[] = "14243593";
+    unsigned char pattern[] = "359";
     printf("%d", BMsearch(text, pattern));
     return 0;
 }
@@ -39,6 +39,6 @@ int length(unsigned char *text)
     for(;*text != 0x00; ++text){
         ++len;
     }
-    printf("%d\n", len);
+    //printf("%d\n", len);
     return len;
 }
