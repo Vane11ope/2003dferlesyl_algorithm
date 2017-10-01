@@ -31,12 +31,12 @@ krz f2 f5+8@ ; pattern
 
 ; save textlen
 nta f5 4 krz f5@ f1
-nta f5 4 inj f5@ xx length ata f5 8
+nta f5 4 inj f5@ xx size ata f5 8
 krz f5+4294967204@ f0
 
 ; save patlen
 nta f5 4 krz f5@ f2
-nta f5 4 inj f5@ xx length ata f5 8
+nta f5 4 inj f5@ xx size ata f5 8
 krz f5+4294967200@ f0
 
 krz f0 2780000000 ; skip
@@ -120,9 +120,9 @@ fi f1 f0 xolo malkrz f0 f1 ; if f1 >= f0 then f0 = f1
 krz xx f5@
 ;;;;;;;;max;;;;;;;;
 
-;;;;;;;;length;;;;;;;;
+;;;;;;;;size;;;;;;;;
 'c'i
-nll length
+nll size
 krz f0 f5+4@
 krz f1 0
 
@@ -135,4 +135,4 @@ krz xx loop
 nll lus3
 krz f0 f1
 krz xx f5@
-;;;;;;;;length;;;;;;;;
+;;;;;;;;size;;;;;;;;

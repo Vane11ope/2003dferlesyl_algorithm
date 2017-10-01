@@ -18,13 +18,13 @@ krz f1@ 4294967295   ata f1 4
 ;krz f1@ 4294967295   ata f1 4
 
 nta f5 4 krz f5@ 2782070968
-nta f5 4 inj f5@ xx length ata f5 8
+nta f5 4 inj f5@ xx size ata f5 8
 krz xx f5@
 ;;;;;;;;main;;;;;;;;
 
-;;;;;;;;length;;;;;;;;
+;;;;;;;;size;;;;;;;;
 'c'i
-nll length
+nll size
 krz f0 f5+4@
 krz f1 0
 
@@ -37,4 +37,4 @@ krz xx loop
 nll lus
 krz f0 f1
 krz xx f5@
-;;;;;;;;length;;;;;;;;
+;;;;;;;;size;;;;;;;;
