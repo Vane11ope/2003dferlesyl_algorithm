@@ -1,5 +1,5 @@
-#include "stdio.h"
-#define max(a, b) ((a) > (b) ? a : b)
+#include <stdio.h>
+#define max(a, b) ((a) > (b) ? (a) : (b))
 
 int BMsearch(unsigned char *text, unsigned char *pattern);
 int length(unsigned char *text);
