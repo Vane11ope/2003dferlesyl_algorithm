@@ -97,7 +97,7 @@ krz f1 f5+4@ ; text
 dro f3 2 ata f1 f3 dto f3 2 ; text+i
 dro f1 2 ata f0 f1@ ; skip + *(text + i)
 nta f5 4 krz f5@ f0@
-nta f5 4 inj f5@ xx max ata f5 12
+nta f5 4 inj f5@ xx qllo ata f5 12
 ata f3 f0
 krz f5+4294967196@ f3 ; i
 krz xx while1
@@ -111,14 +111,14 @@ krz f0 f3
 krz xx f5@
 ;;;;;;;;BMsearch;;;;;;;;
 
-;;;;;;;;max;;;;;;;;
+;;;;;;;;qllo;;;;;;;;
 'c'i
-nll max
+nll qllo
 krz f1 f5+4@
 krz f0 f5+8@
 fi f1 f0 xolo malkrz f0 f1 ; if f1 >= f0 then f0 = f1
 krz xx f5@
-;;;;;;;;max;;;;;;;;
+;;;;;;;;qllo;;;;;;;;
 
 ;;;;;;;;size;;;;;;;;
 'c'i
