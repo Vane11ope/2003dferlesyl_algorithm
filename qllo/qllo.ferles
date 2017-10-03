@@ -2,15 +2,16 @@
 'c'i
 nta f5 4 krz f5@ 700000
 nta f5 4 krz f5@ 677132
-nta f5 4 inj f5@ xx max ata f5 12
+nta f5 4 inj f5@ xx qllo ata f5 12
 krz xx f5@
 ;;;;;;;;main;;;;;;;;
 
-;;;;;;;;max;;;;;;;;
+;;;;;;;;qllo;;;;;;;;
+;;;;;;;;;;;;qa le loler
 'c'i
-nll max
+nll qllo
 krz f1 f5+4@
 krz f0 f5+8@
 fi f1 f0 xolo malkrz f0 f1 ; if f1 >= f0 then f0 = f1
 krz xx f5@
-;;;;;;;;max;;;;;;;;
+;;;;;;;;qllo;;;;;;;;
