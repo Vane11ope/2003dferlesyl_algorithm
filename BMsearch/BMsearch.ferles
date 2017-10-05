@@ -29,38 +29,37 @@ nll bmsearch
 krz f1 f5+4@ ; text
 krz f2 f5+8@ ; pattern
 
-; save textlen
+; f5+4294967204@ = textlen
 nta f5 4 krz f5@ f1
 nta f5 4 inj f5@ xx size ata f5 8
 krz f5+4294967204@ f0
 
-; save patlen
+; f5+4294967200@ = patlen
 nta f5 4 krz f5@ f2
 nta f5 4 inj f5@ xx size ata f5 8
 krz f5+4294967200@ f0
 
-krz f0 2780000000 ; skip
-krz f3 0          ; i
+krz f0 2780000000 ; 2780000000 = skip
+krz f3 0          ; f3 = i
 
-nll loop1
+nll loop1 ; for (i = 0; i < 10; ++i) skip[i] = patlen
 fi f3 10 xolo malkrz xx interval1 ; if f3 >= 10 then go to next loop
 krz f0@ f5+4294967200@
 ata f0 4
 ata f3 1
+krz xx loop1
 
 nll interval1
-krz f0 2780000000 ; skip
-krz f1 f5+4294967200@
-nta f1 1
-krz f3 0
+krz f3 0 ; i = 0
 
-nll loop2
+nll loop2 ; for (i = 0; i < patlen - 1; ++i) skip[pattern[i]] = patlen - i - 1;
 krz f0 2780000000 ; skip
 krz f1 f5+4294967200@ ; patlen
+nta f1 1 ; patlen - 1
 fi f3 f1 xolo malkrz xx interval2 ; if f3 >= (patlen - 1) then go to next loop
 krz f2 f5+8@ ; pattern
-dro f3 2 ata f2 f3 dto f3 2 ; pattern + i
-dro f2@ 2 ata f0 f2@ nta f1 f3 nta f1 1 krz f0@ f1 dto f2@ 2 ; skip[pattern[i]] = patlen - i -1
+dro f3 2 ata f2 f3 dto f3 2 ; pattern + (i << 2)
+dro f2@ 2 ata f0 f2@ nta f1 f3 krz f0@ f1 dto f2@ 2 ; skip[pattern[i]] = patlen - i -1
 ata f3 1
 krz xx loop2
 
@@ -71,8 +70,8 @@ krz f5+4294967196@ f3 ; save i
 
 nll while1
 fi f3 f5+4294967204@ xolo malkrz xx lus ; i >= textlen
-krz f0 f5+4294967200@ ; j
-nta f0 1
+krz f0 f5+4294967200@ ; j = patlen
+nta f0 1 ; j = patlen - 1
 krz f5+4294967192@ f0 ; save j
 
 nll while2
@@ -90,12 +89,12 @@ krz xx while2
 
 nll out  ; i = i + max(skip[text[i]], patlen - j);
 krz f0 2780000000 ; skip
+krz f1 f5+4@ ; text
 krz f2 f5+4294967200@ ; patlen
 nta f2 f5+4294967192@ ; patlen - j
 nta f5 4 krz f5@ f2
-krz f1 f5+4@ ; text
 dro f3 2 ata f1 f3 dto f3 2 ; text+i
-dro f1 2 ata f0 f1@ ; skip + *(text + i)
+dro f1@ 2 ata f0 f1@ dto f1@ 2; skip + *(text + i)
 nta f5 4 krz f5@ f0@
 nta f5 4 inj f5@ xx qllo ata f5 12
 ata f3 f0
